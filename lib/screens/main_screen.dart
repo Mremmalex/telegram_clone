@@ -14,6 +14,9 @@ class MainScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
+            const SizedBox(
+              height: 35,
+            ),
             AppBarWidget(),
             const SizedBox(
               height: 30,
@@ -44,19 +47,18 @@ class MainScreen extends StatelessWidget {
                 itemCount: userData.length,
                 itemBuilder: ((context, index) {
                   return SizedBox(
-                    height: 80,
+                    height: 90,
                     child: ListTile(
                       leading: Container(
-                        width: 72,
-                        height: 72,
+                        width: 70,
+                        height: 89,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          // image: DecorationImage(
-                          //   image: Image.network(userData[index].image),
-                          //   fit: BoxFit.cover,
-                          // ),
+                          image: DecorationImage(
+                            image: AssetImage(userData[index].image),
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                        child: Image.asset(userData[index].image),
                       ),
                       title: Text(userData[index].name),
                       subtitle: Text(
@@ -73,6 +75,36 @@ class MainScreen extends StatelessWidget {
                           const SizedBox(
                             height: 5,
                           ),
+                          userData[index].sentBy == "user"
+                              ? Container(
+                                  width:
+                                      userData[index].messageCount.bitLength > 2
+                                          ? 30
+                                          : 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                    color: primaryColor,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "${userData[index].messageCount}",
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              : Container(
+                                  width: 20,
+                                  height: 20,
+                                  child: Icon(
+                                    Icons.done_all_outlined,
+                                    color: userData[index].seen
+                                        ? primaryColor
+                                        : Colors.grey,
+                                  ),
+                                ),
                         ],
                       ),
                     ),
