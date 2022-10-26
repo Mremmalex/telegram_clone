@@ -28,24 +28,33 @@ class AppBarWidget extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Icon(
-                Icons.add,
-                color: primaryColor,
+            children: [
+              InkWell(
+                onTap: addPressed,
+                child: const Icon(
+                  Icons.add,
+                  color: primaryColor,
+                ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
-              Icon(
-                Icons.search,
-                color: primaryColor,
+              InkWell(
+                onTap: searchPressed,
+                child: const Icon(
+                  Icons.search,
+                  color: primaryColor,
+                ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
-              Icon(
-                Icons.menu_open,
-                color: primaryColor,
+              InkWell(
+                onTap: menuPressed,
+                child: const Icon(
+                  Icons.menu_open,
+                  color: primaryColor,
+                ),
               ),
             ],
           )
