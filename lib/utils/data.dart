@@ -1,3 +1,4 @@
+import 'package:telegram/models/chat_model.dart';
 import 'package:telegram/models/user_model.dart';
 
 List<UserModel> userData = [
@@ -9,6 +10,10 @@ List<UserModel> userData = [
     bio: "I am a designer from microsoft",
     message: "Hello, how are you?",
     time: DateTime.now().hour,
+    chats: [
+      ChatModel(message: "hello", messageType: "receiver"),
+      ChatModel(message: "hi", messageType: "sender")
+    ],
     messageCount: 2,
   ),
   UserModel(
@@ -19,6 +24,10 @@ List<UserModel> userData = [
     bio: "I am a Frontend from microsoft",
     message: "Hello, will you stop ignoring me?",
     messageCount: 1,
+    chats: [
+      ChatModel(message: "hello", messageType: "receiver"),
+      ChatModel(message: "hi", messageType: "sender")
+    ],
     time: DateTime.now().minute,
   ),
   UserModel(
@@ -29,6 +38,10 @@ List<UserModel> userData = [
     bio: "I am a designer from microsoft",
     message: "Hello bro!, Come To my house",
     messageCount: 164,
+    chats: [
+      ChatModel(message: "hello", messageType: "receiver"),
+      ChatModel(message: "hi", messageType: "sender")
+    ],
     time: DateTime.now().minute,
   ),
   UserModel(
@@ -39,6 +52,10 @@ List<UserModel> userData = [
     bio: "I am a designer from microsoft",
     message: "Hello, Why did you do that?",
     messageCount: 66,
+    chats: [
+      ChatModel(message: "hello", messageType: "receiver"),
+      ChatModel(message: "hi", messageType: "sender")
+    ],
     time: DateTime.now().minute,
   ),
   UserModel(
@@ -52,6 +69,20 @@ List<UserModel> userData = [
     sentBy: "me",
     unread: false,
     messageCount: 0,
+    chats: [
+      ChatModel(
+          message:
+              "Hi, son, how are you doing? Today, my father and I went to buy a car, bought a cool car.",
+          messageType: "receiver"),
+      ChatModel(message: "Oh! cool send me photo", messageType: "sender"),
+      ChatModel(message: "ok😍", messageType: "receiver"),
+      ChatModel(
+        message: "assets/users/user2.jpeg",
+        messageType: "receiver",
+        isImage: true,
+      ),
+      ChatModel(message: "will we arrive tomorrow?", messageType: "receiver"),
+    ],
     seen: true,
   ),
   UserModel(
@@ -64,6 +95,10 @@ List<UserModel> userData = [
     time: DateTime.now().minute,
     sentBy: "me",
     messageCount: 0,
+    chats: [
+      ChatModel(message: "hello", messageType: "receiver"),
+      ChatModel(message: "hi", messageType: "sender")
+    ],
     unread: false,
   ),
 ];
